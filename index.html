@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pixel Pomodoro</title>
+<meta name="description" content="An offline, ad-free, pixel-art Pomodoro timer. No accounts, no tracking, no network calls." />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>PIXEL POMODORO</h1>
+
+    <div id="session-badge" class="session-badge work">WORK</div>
+
+    <div id="scene" class="scene" aria-label="Pixel-art scene showing current session state"></div>
+
+    <div id="time-display" class="time-display">25:00</div>
+
+    <div id="progress-track" class="progress-track" role="progressbar" aria-label="Session progress"></div>
+
+    <div class="task-row">
+      <label for="task-input">WHAT ARE YOU WORKING ON?</label>
+      <input id="task-input" type="text" placeholder="e.g. Write report..." maxlength="80" />
+    </div>
+
+    <div class="controls">
+      <button id="btn-start-pause" class="primary wide">START [SPACE]</button>
+      <button id="btn-reset">RESET [R]</button>
+      <button id="btn-skip">SKIP [S]</button>
+    </div>
+
+    <button id="settings-toggle" class="settings-toggle">⚙ SETTINGS</button>
+    <div id="settings-panel" class="settings-panel">
+      <div class="field">
+        <label for="setting-work">Work (min)</label>
+        <input id="setting-work" type="number" min="1" max="180" step="1" />
+      </div>
+      <div class="field">
+        <label for="setting-short">Short break (min)</label>
+        <input id="setting-short" type="number" min="1" max="180" step="1" />
+      </div>
+      <div class="field">
+        <label for="setting-long">Long break (min)</label>
+        <input id="setting-long" type="number" min="1" max="180" step="1" />
+      </div>
+      <div class="save-row">
+        <button id="settings-save" class="primary">SAVE</button>
+        <button id="settings-cancel">CANCEL</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-block">
+        <div>COMPLETED</div>
+        <span id="tally-value" class="value">0</span>
+      </div>
+      <div class="stat-block">
+        <div>CYCLE</div>
+        <span id="cycle-value" class="value">0 / 4</span>
+      </div>
+    </div>
+
+    <div id="notice" class="notice"></div>
+
+    <div class="shortcuts">
+      <kbd>SPACE</kbd> pause/resume &nbsp; <kbd>R</kbd> reset &nbsp; <kbd>S</kbd> skip
+    </div>
+
+    <footer>
+      100% offline · no accounts · no tracking<br />
+      font: Press Start 2P (OFL) — see assets/fonts/OFL.txt
+    </footer>
+  </main>
+
+  <script src="assets/js/timer.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
